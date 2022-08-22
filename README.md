@@ -1,2 +1,4 @@
-# WIP! osu.conman.dev
-Home of osu!online
+# osu!online
+osu!stable in a browser!
+
+W.I.P.
