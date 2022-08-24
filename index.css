@@ -1,7 +1,7 @@
-/* @font-face {
+@font-face {
 	font-family: Aller;
-	src: url(https://www.1001fonts.com/download/font/aller.bold.ttf);
-} */
+	src: url(assets/allerbold.ttf);
+}
 @font-face {
 	font-family: Comfortaa;
 	src: url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap);
