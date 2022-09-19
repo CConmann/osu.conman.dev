@@ -3,7 +3,13 @@
 function id(val){ return document.getElementById(val); }
 const d = document,
 playfield = id('playfield'),
-pfc = playfield.getContext('2d');
+pfc = playfield.getContext('2d'),
+settingDefaults = {
+	skin: 'default',
+	sensitivity: 1,
+	parallax: 1,
+	comboBursts: false
+};
 var winWidth,
 winheight,
 mouseX,
@@ -11,33 +17,31 @@ mouseY,
 scene,
 songs = [],
 currentSongId,
-parallax = 10,
 optionsOpen = false,
-wasInFullscreen;
+wasInFullscreen,
+settings = {};
 
-function openStartMenu()
-{
+function openStartMenu(){
+	d.querySelector('#logoButtonContainerCenter').style.background = 'rgba(0,0,0,0.4)';
 	setClass('#logoButtonContainer','logoButtonContainer');
 	setClass('#logoContainer','logoContainerOut centerY');
 	setClass('#topMiniMenu', 'miniMenuOut topMiniMenu');
 	setClass('#botMiniMenu', 'miniMenuOut botMiniMenu');
 }
-function closeStartMenu()
-{
+function closeStartMenu(){
+	d.querySelector('#logoButtonContainerCenter').style.background = '';
 	setClass('#logoContainer','centerX centerY');
 	setClass('#logoButtonContainer', 'logoButtonContainerIn');
 	setClass('#topMiniMenu', 'miniMenu topMiniMenu');
 	setClass('#botMiniMenu', 'miniMenu botMiniMenu');
 }
-function setCookie(cname, cvalue, exdays)
-{
+function setCookie(cname, cvalue, exdays){
 	var temp = new Date();
 	temp.setTime(temp.getTime() + (exdays*24*60*60*1000));
 	var temp2 = "expires="+ temp.toUTCString();
 	d.cookie = cname + "=" + cvalue + ";" + temp2 + ";path=/";
 }
-function getCookie(cname) // W3, more like W-ME... cus i stole the code
-{
+function getCookie(cname){ // W3, more like W-ME... cus i stole the code
 	var temp = cname + "=";
 	var temp2 = decodeURIComponent(d.cookie);
 	var temp3 = temp2.split(';');
@@ -52,12 +56,10 @@ function getCookie(cname) // W3, more like W-ME... cus i stole the code
 	}
 	return null;
 }
-function setClass(cname, cvalue)
-{
+function setClass(cname, cvalue){
 	d.querySelector(cname).className = cvalue;
 }
-function errMsg(message)
-{
+function errMsg(message){
 	var newElement = d.createElement('p');
 	const newContent = d.createTextNode(message);
 	newElement.className = 'errMsg';
@@ -69,16 +71,14 @@ function errMsg(message)
 }
 // * options start
 {
-function openOptions()
-{
+function openOptions(){
 	optionsOpen = true;
 	d.querySelector('#options').style.width = '57vh';
 	d.querySelector('#options').style.opacity = '1';
 	d.querySelector('#optionsSidebar').style.display = 'block'
 	d.querySelector('#optionsSidebar').style.opacity = '1';
 }
-function closeOptions()
-{
+function closeOptions(){
 	optionsOpen = false;
 	d.querySelector('#options').style.width = '0vh';
 	d.querySelector('#options').style.opacity = '0';
@@ -93,15 +93,13 @@ id('fileImport').addEventListener('change', (event) => {
 		importSong(fileList[i]);
 	}
 });
-function importSong(efile)
-{
+function importSong(efile){
 	const reader = new FileReader();
 	// console.log(fr.readAsText(efile));
 	console.log(efile);
 }
 }// * options end
-function resChange()
-{
+function resChange(){
 	playfield.width = window.innerWidth * (4/3);
 	playfield.height = window.innerHeight;
 	if(window.innerHeight == screen.height && window.innerWidth == screen.width){
@@ -115,15 +113,13 @@ function resChange()
 }
 window.onresize = resChange;
 resChange();
-function mouseMove(e)
-{
+function mouseMove(e){
 	mouseX = e.offsetX;
 	mouseY = e.offsetY;
 }
 d.addEventListener('mousemove', e => { mouseMove(e); });
 
-function updateScene(sceneName)
-{
+function updateScene(sceneName){
 	if(sceneName){
 		scene = sceneName;
 		setCookie('lastScene', sceneName, 1)
@@ -135,8 +131,7 @@ function updateScene(sceneName)
 	d.getElementById(scene).style.display = 'block';
 }
 
-function initSongSelect()
-{
+function initSongSelect(){
 	var songEl = id('songScrollCont');
 	songEl.innerHTML = '';
 	for (let i = 0; i < songs.length; i++) {
@@ -144,8 +139,7 @@ function initSongSelect()
 	}
 }
 
-function init() // brov'
-{
+function init(){ // brov'
 	closeOptions();
 	if(getCookie('lastScene')){
 		scene = getCookie('lastScene');
