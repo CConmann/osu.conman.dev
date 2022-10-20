@@ -5,21 +5,24 @@
 	<title>osu!online</title>
 </head>
 <body id="body">
-	<div class="flex cenX cenY" style="width: 100%; height: 100vh; backdrop-filter: blur(1px) brightness(50%);">
+	<div class="flex cenX cenY fullY fullX" style="backdrop-filter: blur(1px) brightness(50%);">
 		<div class="fullCont">
-			
-			<div class="header"></div>
+			<div class="header"><!-- TODO header buttons --></div>
 			<div id="gameWindow" class="gameWindow">
 				<div class="S">
 					<div class="SflexCont">
 						<div class="SbuttonCont" style="width: calc(var(--viewH) * 0.314); justify-content: right; left: calc(var(--viewH) * 0.026);">
-							<button class="Sbutton" style="--c:#555555;">Settings</button>
+							<!-- TODO refur to the 2nt .SbuttonCont -->
+							<button class="Sbutton" style="--c:#555555;" onclick="openSettings()">Settings</button>
 						</div>
 						<div class="SlogoCont">
+							<!-- TODO animated triangles bg -->
 							<canvas class="SlogoBg JStriangles" style="pointer-events: none;"></canvas>
 							<span class="SlogoTxt">osu!</span>
 						</div>
 						<div class="SbuttonCont" style="left: calc(var(--viewH) * -0.026);">
+							<!-- TODO little bouncing icons :) -->
+							<!-- TODO shadows too -->
 							<button class="Sbutton" style="--c:#6546c0;">Play</button>
 							<button class="Sbutton" style="--c:#eeaa00;">Edit</button>
 							<button class="Sbutton" style="--c:#a5cc00;">Browse</button>
@@ -28,6 +31,23 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="flex cenX cenY fullY fullX" style="display: none; position: fixed; pointer-events: none;" id="settingsCont">
+		<div class="settingsCont">
+			<div class="settingsSidebar">
+				<!-- TODO sidebar buttons -->
+				settings
+			</div>
+			<div class="settings">
+				<div>
+					<h2>UI Customization</h2>
+					<input type="text" name="Logo Text" id="settingsLogoTxt" oninput="document.querySelector('.SlogoTxt').innerHTML = (this.value?this.value:'osu!');">
+					<input type="color" name="Logo Color" id="settingsLogoColor" value="#e967a1" oninput="document.querySelector('.SlogoCont').style.background = this.value;">
+				</div>
+				<span>Version 0.01</span>z
+			</div>
+			<div class="settingsClose" onclick="closeSettings()"></div>
 		</div>
 	</div>
 <script src="index.js"></script>
