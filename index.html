@@ -26,7 +26,7 @@
 							<button class="Sbutton" style="--c:#6546c0;">Play</button>
 							<button class="Sbutton" style="--c:#eeaa00;">Edit</button>
 							<button class="Sbutton" style="--c:#a5cc00;">Browse</button>
-							<button class="Sbutton" style="--c:#ee3399;">Exit</button>
+							<button class="Sbutton" style="--c:#ee3399;" onclick="window.location.href = 'https://conman.dev';">Exit</button>
 						</div>
 					</div>
 				</div>
@@ -45,7 +45,7 @@
 					<input type="text" name="Logo Text" id="settingsLogoTxt" oninput="document.querySelector('.SlogoTxt').innerHTML = (this.value?this.value:'osu!');">
 					<input type="color" name="Logo Color" id="settingsLogoColor" value="#e967a1" oninput="document.querySelector('.SlogoCont').style.background = this.value;">
 				</div>
-				<span>Version 0.01</span>z
+				<span>Version 0.02</span>
 			</div>
 			<div class="settingsClose" onclick="closeSettings()"></div>
 		</div>

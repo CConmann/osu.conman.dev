@@ -37,6 +37,7 @@
 	display: flex;
 	width: var(--viewW);
 	height: var(--viewH);
+	color: whitesmoke;
 }
 .settingsClose{
 	height: 100%;
