@@ -18,6 +18,20 @@ function updateMenu(name){
 	}
 }
 
+function updateFavicon(color){
+	var canvas = document.createElement('canvas');
+		canvas.width = 64;canvas.height = 64;
+	var ctx = canvas.getContext('2d');
+	ctx.beginPath();
+	ctx.fillStyle = color;
+	ctx.arc(32, 32, 30, 0, 2 * Math.PI);
+	ctx.fill();
+	ctx.strokeStyle = '#ffffff';
+	ctx.lineWidth = '2';
+	ctx.stroke();
+	var link = document.querySelectorAll('#favicon')[0];
+        link.href = canvas.toDataURL("image/x-icon");
+}
 // var i = 0,
 // iaa = setInterval(function(){
 // 	document.querySelector(':root').style.setProperty('--viewW', i + 'vw');
