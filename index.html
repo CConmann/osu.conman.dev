@@ -8,7 +8,32 @@
 <body id="body">
 	<div class="flex cenX cenY fullY fullX" style="backdrop-filter: blur(1px) brightness(50%);">
 		<div class="fullCont">
-			<div class="header"><!-- TODO header buttons --></div>
+			<div class="header">
+				<div class="headCont">
+					<!-- TODO finish header buttons -->
+					<button class="headButton" style="--i: url(assets/hexacons/settings.png); --h: 'settings'; --d: 'change the way osu! behaves (Ctrl-O)'; width: calc(var(--fullH) * 0.07314);"></button>
+					<button class="headButton" style="--i: url(assets/hexacons/home.png); --h: 'home'; --d: 'return to the main menu (Alt-Home)'; width: calc(var(--fullH) * 0.07314);"></button>
+					<div class="JStriangles" style="display: flex;">
+						<button class="headButton" style="--i: url(assets/hexacons/calendar.png); --h:'osu!'; --d: 'play some osu!';"></button>
+						<button class="headButton" style="--i: url(assets/hexacons/calendar.png); --h:'osu!taiko'; --d: 'play some osu!taiko';"></button>
+						<button class="headButton" style="--i: url(assets/hexacons/calendar.png); --h:'osu!catch'; --d: 'play some osu!catch';"></button>
+						<button class="headButton" style="--i: url(assets/hexacons/calendar.png); --h:'osu!mania'; --d: 'play some osu!mania';"></button>
+					</div>
+				</div>
+				<div class="headCont" style="justify-content: right;">
+					<button class="headButton" style="--i: url(assets/hexacons/news.png); --h:'news'; --d: 'get up-to-date on community happenings';"></button>
+					<button class="headButton" style="--i: url(assets/hexacons/devtools.png); --h:'changelog'; --d: 'track recent dev updates in the osu! ecosystem';"></button>
+					<button class="headButton" style="--i: url(assets/hexacons/rankings.png); --h:'rankings'; --d: 'find out who`s the best right now';"></button>
+					<button class="headButton" style="--i: url(assets/hexacons/beatmap.png); --h:'beatmap listing'; --d: 'browse for new beatmaps (Ctrl-D)';"></button>
+					<button class="headButton" style="--i: url(assets/hexacons/messaging.png); --h:'chat'; --d: 'join the real-time discussion (f8)';"></button>
+					<button class="headButton" style="--i: url(assets/hexacons/social.png); --h:'dashboard'; --d: 'view your friends and other information (f9)';"></button>
+					<button class="headButton" style="--i: url(assets/hexacons/wiki.png); --h:'wiki'; --d: 'knowledge base';"></button>
+					<button class="headButton" style="--i: url(assets/hexacons/music.png); --h:'playback'; --d: 'manage the currently playing track (f6)'; width: calc(var(--fullH) * 0.07685);"></button>
+					<button class="headButton JStriangles" style="width: calc(var(--fullH) * 0.17685);">Profile</button>
+					<button class="headButton" style="width: calc(var(--fullH) * 0.1472);">Clock</button>
+					<button class="headButton" style="--i: url(assets/hexacons/notification.png); --h: 'notifications'; --d: 'waiting for `ya (Ctrl-N)'"></button>
+				</div>
+			</div>
 			<div id="gameWindow" class="gameWindow">
 				<div class="S">
 					<div class="SflexCont">
@@ -34,7 +59,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex cenX cenY fullY fullX" style="display: none; position: fixed; pointer-events: none;" id="settingsCont">
+	<div class="flex cenX fullY fullX" style="display: none; position: fixed; pointer-events: none; align-items: flex-end;" id="settingsCont">
 		<div class="settingsCont">
 			<div class="settingsSidebar">
 				<!-- TODO sidebar buttons -->
@@ -42,14 +67,22 @@
 			</div>
 			<div class="settings">
 				<div>
+					<!-- TODO make the darn things accually work -->
+					<h2>Display</h2>
+					ViewW - <input type="range" name="view width"><br>
+					ViewH - <input type="range" name="view height">
+				</div>
+				<div>
 					<h2>UI Customization</h2>
 					<input type="text" name="Logo Text" id="settingsLogoTxt" oninput="document.querySelector('.SlogoTxt').innerHTML = (this.value?this.value:'osu!');">
 					<input type="color" name="Logo Color" id="settingsLogoColor" value="#e967a1" oninput="updateFavicon(this.value); document.querySelector('.SlogoCont').style.background = this.value;">
 				</div>
-				<span>Version 0.02</span>
 			</div>
 			<div class="settingsClose" onclick="closeSettings()"></div>
 		</div>
+	</div>
+	<div class="flex cenX cenY fullX" style=" position: fixed; pointer-events: none; top: auto; bottom: 0px; background: transparent url('assets/textures/footer.png') no-repeat center; background-size: cover;">
+		<span style="color: #f8f8f8; font-family: Comfortaa; font-size: calc(var(--fullH) * 0.011);"><b style="font-family: Aller;">osu!online</b> v0.03-Beta</span>
 	</div>
 <script src="index.js"></script>
 </body>

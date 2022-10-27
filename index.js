@@ -12,6 +12,12 @@ function openSettings(){
 function closeSettings(){
 	document.querySelector('#settingsCont').style.display = 'none';
 }
+function openHeader(){
+
+}
+function closeHeader(){
+	
+}
 function updateMenu(name){
 	if(name){
 		scene = name;
@@ -32,6 +38,8 @@ function updateFavicon(color){
 	var link = document.querySelectorAll('#favicon')[0];
         link.href = canvas.toDataURL("image/x-icon");
 }
+
+document.querySelectorAll('.S')[0].style.backgroundImage = ('url(assets/backgrounds/' + (Math.floor(Math.random() * 6) + 1) + '.jpg)');
 // var i = 0,
 // iaa = setInterval(function(){
 // 	document.querySelector(':root').style.setProperty('--viewW', i + 'vw');
