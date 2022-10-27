@@ -1,0 +1,171 @@
+@font-face { font-family: Aller; src: url(assets/fonts/allerbold.ttf); }
+@font-face { font-family: Comfortaa; src: url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap); }
+.flex{display: flex;}
+.cenX{justify-content: center;}
+.cenY{align-items: center;}
+.fullX{width: 100vw;}
+.fullY{height: 100vh;}
+:root{
+	background: black url("assets/backgrounds/1.jpg") no-repeat center;
+	--viewW: 100vw;
+	--viewH: 95vh;
+	--header: 5vh;
+	--fullH: calc(var(--viewH) + var(--header));
+}
+*{
+	top: 0px;
+	left: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+.fullCont{
+	/* background: #72d7d7; */
+	width: var(--viewW);
+	height: calc(var(--viewH) + var(--header));
+}
+.gameWindow{
+	overflow: hidden;
+	width: 100%;
+	height: var(--viewH);
+}
+@media screen { /** header (head) */
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	height: var(--header);
+	width: 100%;
+	background: #191919;
+}
+.headCont{
+	display: flex;
+	justify-content: left;
+	height: var(--header);
+}
+.headButton{
+	border: none;
+	height: var(--header);
+	width: calc(var(--fullH) * 0.05185);
+	background: transparent url("assets/not-found.png") no-repeat center;
+	background-image: var(--i);
+	background-size: calc(var(--fullH) * 0.03148);
+	/* background-color: rgb(51, 11, 92); */
+	color: #ffffff;
+}
+.headButton:hover{
+	background: rgba(255, 255, 255, 0.2);
+}
+.headButton:hover::before{
+	width: var(--viewW);
+	color: #613ee2;
+	content: var(--h, '');
+}
+.headButton:hover::after{
+	content: var(--d, '');
+}
+}
+@media screen { /** Settings */
+.settingsCont{
+	pointer-events: all;
+	display: flex;
+	width: var(--viewW);
+	height: var(--viewH);
+	color: whitesmoke;
+}
+.settingsClose{
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+.settingsSidebar{
+	display: flex;
+	height: 100%;
+	width: calc(var(--viewH) * 0.096);
+	background: #29272f;
+}
+.settings{
+	background: #34323b;
+}
+}
+@media screen { /** StartMenu (S) */
+.S{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url('assets/backgrounds/1.jpg') no-repeat center;
+	background-size: cover;
+	width: var(--viewW);
+	height: var(--viewH);
+}
+.SflexCont{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: calc(var(--viewH) * 0.1315);
+	background: #323232;
+	
+}
+.SbuttonCont{
+	position: relative;
+	display: flex;
+	height: 100%;
+	width: calc(var(--viewH) * 0.929);
+	z-index: 0;
+	transition: opacity 1s;
+}
+.Sbutton{
+	height: 100%;
+	width: calc(var(--viewH) * 0.2);
+	transform: skewX(-11.5deg);
+	background: var(--c);
+	border: none;
+	animation: SbuttonBounce-back 0.27s backwards;
+	cursor: pointer;
+}
+.Sbutton:hover{
+	width: calc(var(--viewH) * 0.3);
+	animation: SbuttonBounce 0.27s;
+}
+@keyframes SbuttonBounce {
+	0%   { width: calc(var(--viewH) * 0.2); }
+	25%  { width: calc(var(--viewH) * 0.33); }
+	50%  { width: calc(var(--viewH) * 0.27); }
+	75%  { width: calc(var(--viewH) * 0.31); }
+	100% { width: calc(var(--viewH) * 0.3); }
+}
+@keyframes SbuttonBounce-back {
+	0%   { width: calc(var(--viewH) * 0.3); }
+	25%  { width: calc(var(--viewH) * 0.17); }
+	50%  { width: calc(var(--viewH) * 0.23); }
+	75%  { width: calc(var(--viewH) * 0.19); }
+	100% { width: calc(var(--viewH) * 0.2); }
+}
+.SlogoCont{
+	--logoSize: 0.2713;
+	overflow: hidden;
+	height: calc(var(--viewH) * var(--logoSize));
+	width: calc(var(--viewH) * var(--logoSize));
+	background: #e967a1;
+	border: solid calc(var(--viewH) * (var(--logoSize) * 0.0546)) #ffffff;
+	border-radius: 727vh;
+	z-index: 1;
+	transition: width 0.15s cubic-bezier(.33,.99,.36,1.39), height 0.15s cubic-bezier(.33,.99,.36,1.39);
+	text-align: center;
+	cursor: pointer;
+}
+.SlogoCont:hover{
+	--logoSize: 0.29815;
+}
+.SlogoBg{
+	width: 100%;
+	height: 100%;
+}
+.SlogoTxt{
+	display: block; /* needs to be display: block; for some reason*/
+	margin-top: calc(100% * -0.797);
+	font: calc(var(--viewH) * (var(--logoSize) * 0.415)) Aller;
+	color: #ffffff;
+	transition: font-size 0.15s cubic-bezier(.33,.99,.36,1.39);
+}
+}
