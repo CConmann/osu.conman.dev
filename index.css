@@ -43,6 +43,7 @@
 	height: var(--header);
 }
 .headButton{
+	position: relative;
 	border: none;
 	height: var(--header);
 	width: calc(var(--fullH) * 0.05185);
@@ -53,14 +54,21 @@
 	color: #ffffff;
 }
 .headButton:hover{
-	background: rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 0.2);
 }
 .headButton:hover::before{
-	width: var(--viewW);
+	position: absolute;
+	top: var(--header);
+	left: 0;
+	align-self: center;
 	color: #613ee2;
 	content: var(--h, '');
 }
 .headButton:hover::after{
+	position: absolute;
+	left: 0;
+	text-align: left;
+	top: calc(var(--header) * 1.5);
 	content: var(--d, '');
 }
 }
@@ -68,8 +76,8 @@
 .settingsCont{
 	pointer-events: all;
 	display: flex;
-	width: var(--viewW);
-	height: var(--viewH);
+	width: 100vw;
+	height: 100vh;
 	color: whitesmoke;
 }
 .settingsClose{
@@ -80,7 +88,7 @@
 .settingsSidebar{
 	display: flex;
 	height: 100%;
-	width: calc(var(--viewH) * 0.096);
+	width: 9.6vh;
 	background: #29272f;
 }
 .settings{
@@ -143,6 +151,7 @@
 }
 .SlogoCont{
 	--logoSize: 0.2713;
+	position: relative;
 	overflow: hidden;
 	height: calc(var(--viewH) * var(--logoSize));
 	width: calc(var(--viewH) * var(--logoSize));

@@ -1,3 +1,4 @@
+function setCssVar(name, val, obj){ document.querySelector((obj ? obj : ':root')).style.setProperty(name, val); } // defaults to :root
 var customSettings = {},
 	scene;
 function SlogoFull(){
@@ -5,6 +6,9 @@ function SlogoFull(){
 		el.style.opacity = '0';
 	});
 	document.querySelector('.SflexCont').style.background = 'none'
+}
+function getCssVar(){
+	
 }
 function openSettings(){
 	document.querySelector('#settingsCont').style.display = 'flex';
@@ -17,11 +21,6 @@ function openHeader(){
 }
 function closeHeader(){
 	
-}
-function updateMenu(name){
-	if(name){
-		scene = name;
-	}
 }
 
 function updateFavicon(color){
