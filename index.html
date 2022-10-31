@@ -69,16 +69,18 @@
 				settings
 			</div>
 			<div class="settings">
-				<div>
+				<section>
 					<h2>Display</h2>
-					ViewW - <input type="range" name="view width" min="0" max="100" value="100" oninput="setCssVar('--viewW', this.value + 'vw')"><br>
-					ViewH - <input type="range" name="view height" min="0" max="95" value="95" oninput="setCssVar('--viewH', this.value + 'vh'); setCssVar('--header', 5 * (this.value / 100) + 'vh')">
-				</div>
-				<div>
+					<span>View Width</span>
+					<input type="range" name="view width" min="0" max="100" value="100" oninput="setCssVar('--viewW', this.value + 'vw')"><br>
+					<span>View Height</span>
+					<input type="range" name="view height" min="0" max="95" value="95" oninput="setCssVar('--viewH', this.value + 'vh'); setCssVar('--header', 5 * (this.value / 100) + 'vh')">
+				</section>
+				<section>
 					<h2>UI Customization</h2>
-					<input type="text" name="Logo Text" id="settingsLogoTxt" oninput="document.querySelector('.SlogoTxt').innerHTML = (this.value? this.value : 'osu!');">
+					<input type="text" name="Logo Text" id="settingsLogoTxt" oninput="document.querySelector('.SlogoTxt').innerHTML = (this.value? this.value : 'osu!');" placeholder="logo text">
 					<input type="color" name="Logo Color" id="settingsLogoColor" value="#e967a1" oninput="updateFavicon(this.value); document.querySelector('.SlogoCont').style.background = this.value;">
-				</div>
+				</section>
 			</div>
 			<div class="settingsClose" onclick="closeSettings()"></div>
 		</div>

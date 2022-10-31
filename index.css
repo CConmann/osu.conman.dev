@@ -1,5 +1,6 @@
 @font-face { font-family: Aller; src: url(assets/fonts/allerbold.ttf); }
 @font-face { font-family: Comfortaa; src: url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap); }
+@font-face { font-family: Torus; src: url(assets/fonts/Torus/TorusPro-Regular.ttf); }
 .flex{display: flex;}
 .cenX{justify-content: center;}
 .cenY{align-items: center;}
@@ -74,6 +75,8 @@
 }
 @media screen { /** Settings */
 .settingsCont{
+	--accent-color: #8c66ff;
+	--hover-color: #a076ee;
 	pointer-events: all;
 	display: flex;
 	width: 100vw;
@@ -88,11 +91,61 @@
 .settingsSidebar{
 	display: flex;
 	height: 100%;
-	width: 9.6vh;
+	width: 9.074vh;
 	background: #29272f;
 }
 .settings{
+	display: block;
+	width: 52.1296vh;
 	background: #34323b;
+}
+.settings input[type=range]{
+	position: relative;
+	accent-color: var(--accent-color);
+	width: 88.98%;
+	height: 0.64815vh;
+	margin-left: 5.51%;
+}
+.settings input[type=text]{
+	background: #29272f;
+	border: none;
+	border-radius: 5px;
+	width: 88.98%;
+	height: 4.44vh;
+	margin-left: 5.51%;
+	color: #ffffff;
+	font-family: Aller;
+	font-size: 1.8vh;
+	padding-left: 1vh;
+}
+.settings input[type=text]::placeholder{
+	color: #908b9f;
+}
+.settings input[type=color]{
+	width: 88.98%;
+	height: 4.44vh;
+	background: none;
+	border: none;
+	margin-left: 5.51%;
+}
+.settings span{
+	margin-top: 1vh;
+	font-family: Torus;
+	font-size: 1.7vh;
+	margin-left: 5.51%;
+}
+.settings h2{
+	font-family: Torus;
+	font-size: 2vh;
+	margin-top: 1vh;
+	margin-left: 1vh;
+}
+.settings section{
+	border-top: solid #18171c 0.555vh;
+	margin-top: 5.277vh;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 }
 @media screen { /** StartMenu (S) */
