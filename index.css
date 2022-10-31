@@ -1,6 +1,8 @@
 @font-face { font-family: Aller; src: url(assets/fonts/allerbold.ttf); }
 @font-face { font-family: Comfortaa; src: url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap); }
 @font-face { font-family: Torus; src: url(assets/fonts/Torus/TorusPro-Regular.ttf); }
+@font-face { font-family: Torus-Bold; src: url(assets/fonts/Torus/TorusPro-Bold.ttf); }
+@font-face { font-family: Torus-Light; src: url(assets/fonts/Torus/TorusPro-Light.ttf); }
 .flex{display: flex;}
 .cenX{justify-content: center;}
 .cenY{align-items: center;}
@@ -31,12 +33,19 @@
 }
 @media screen { /** header (head) */
 .header{
+	z-index: 1;
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
 	height: var(--header);
 	width: 100%;
 	background: #191919;
+	transition: box-shadow 0.1s;
+	z-index: 1;
+}
+.header:hover{
+	box-shadow: 0 0 calc(var(--fullH) * 0.12) calc(var(--fullH) * 0.04) #000000;
 }
 .headCont{
 	display: flex;
@@ -45,32 +54,42 @@
 }
 .headButton{
 	position: relative;
+	white-space: nowrap;
 	border: none;
 	height: var(--header);
 	width: calc(var(--fullH) * 0.05185);
 	background: transparent url("assets/not-found.png") no-repeat center;
 	background-image: var(--i);
 	background-size: calc(var(--fullH) * 0.03148);
-	/* background-color: rgb(51, 11, 92); */
 	color: #ffffff;
+	transition: background 0.1s;
 }
 .headButton:hover{
 	background-color: rgba(255, 255, 255, 0.2);
 }
-.headButton:hover::before{
+.headButton::before, .headButton::after{
 	position: absolute;
-	top: var(--header);
+	pointer-events: none;
+	font-family: Torus-Bold;
+	font-size: calc(var(--fullH) * 0.025);
+	top: calc(var(--header) * 1.2);
 	left: 0;
-	align-self: center;
-	color: #613ee2;
 	content: var(--h, '');
+	opacity: 0;
+	transition: opacity 0.1s;
 }
-.headButton:hover::after{
-	position: absolute;
-	left: 0;
-	text-align: left;
-	top: calc(var(--header) * 1.5);
+.headButton::after{
+	font-family: Torus-Light;
+	font-size: calc(var(--fullH) * 0.017);
+	top: calc(var(--header) * 1.7);
 	content: var(--d, '');
+}
+.headButton:hover::before, .headButton:hover::after{
+	opacity: 1;
+}
+.headButton.r::before, .headButton.r::after{
+	left: auto;
+	right: 0;
 }
 }
 @media screen { /** Settings */
