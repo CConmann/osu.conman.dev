@@ -48,3 +48,5 @@ document.querySelectorAll('.S')[0].style.backgroundImage = ('url(assets/backgrou
 // 		clearInterval(iaa);
 // 	}
 // }, 4)
+
+openSettings()
