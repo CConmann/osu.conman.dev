@@ -49,4 +49,4 @@ document.querySelectorAll('.S')[0].style.backgroundImage = ('url(assets/backgrou
 // 	}
 // }, 4)
 
-openSettings()
+// openSettings()
