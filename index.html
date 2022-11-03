@@ -72,9 +72,9 @@
 				<section>
 					<h2>Display</h2>
 					<span>View Width</span>
-					<input type="range" name="view width" min="0" max="100" value="100" oninput="setCssVar('--viewW', this.value + 'vw')"><br>
+					<input type="range" name="view width" min="0" max="100" value="100" oninput="cssVar('--viewW', this.value + 'vw')"><br>
 					<span>View Height</span>
-					<input type="range" name="view height" min="0" max="95" value="95" oninput="setCssVar('--viewH', this.value + 'vh'); setCssVar('--header', 5 * (this.value / 100) + 'vh')">
+					<input type="range" name="view height" min="0" max="95" value="95" oninput="cssVar('--viewH', this.value + 'vh'); cssVar('--header', 5 * (this.value / 100) + 'vh')">
 				</section>
 				<section>
 					<h2>UI Customization</h2>
@@ -100,5 +100,6 @@
 		<span style="color: #f8f8f8; font-family: Comfortaa; font-size: calc(var(--fullH) * 0.011);"><b style="font-family: Aller;">osu!online</b> Beta</span>
 	</div>
 <script src="index.js"></script>
+<script src="functs.js"></script>
 </body>
 </html>
