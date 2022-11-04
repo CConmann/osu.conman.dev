@@ -15,7 +15,7 @@
 				<div class="headCont">
 					<!-- TODO finish header buttons -->
 					<button class="headButton" style="--i: url(assets/hexacons/settings.png); --h: 'settings'; --d: 'change the way osu! behaves (Ctrl-O)'; width: calc(var(--fullH) * 0.07314);" onclick="openSettings()"></button>
-					<button class="headButton" style="--i: url(assets/hexacons/home.png); --h: 'home'; --d: 'return to the main menu (Alt-Home)'; width: calc(var(--fullH) * 0.07314);"></button>
+					<button class="headButton" style="--i: url(assets/hexacons/home.png); --h: 'home'; --d: 'return to the main menu (Alt-Home)'; width: calc(var(--fullH) * 0.07314);" onclick="changeScene('LS')"></button>
 					<div class="JStriangles" style="display: flex;">
 						<button class="headButton" style="--i: url(assets/hexacons/calendar.png); --h:'osu!'; --d: 'play some osu!';"></button>
 						<button class="headButton" style="--i: url(assets/hexacons/calendar.png); --h:'osu!taiko'; --d: 'play some osu!taiko';"></button>
@@ -38,7 +38,7 @@
 				</div>
 			</div>
 			<div id="gameWindow" class="gameWindow">
-				<div class="S">
+				<div class="S" style="display: flex;" data-display="flex">
 					<div class="SflexCont">
 						<div class="SbuttonCont" style="width: calc(var(--viewH) * 0.314); justify-content: right; left: calc(var(--viewH) * 0.026);">
 							<!-- TODO refur to the 2nt .SbuttonCont -->
@@ -52,12 +52,15 @@
 						<div class="SbuttonCont" style="left: calc(var(--viewH) * -0.026);">
 							<!-- TODO little bouncing icons :) -->
 							<!-- TODO shadows too -->
-							<button class="Sbutton" style="--c:#6546c0;">Play</button>
+							<button class="Sbutton" style="--c:#6546c0;" onclick="changeScene('LS')">Play</button>
 							<button class="Sbutton" style="--c:#eeaa00;">Edit</button>
 							<button class="Sbutton" style="--c:#a5cc00;">Browse</button>
 							<button class="Sbutton" style="--c:#ee3399;" onclick="window.location.href = 'https://conman.dev';">Exit</button>
 						</div>
 					</div>
+				</div>
+				<div class="LS" style="display: none;" data-display="flex">
+					<img src="assets/not-found.png" alt="not found">
 				</div>
 			</div>
 		</div>
@@ -77,7 +80,7 @@
 					<input type="range" name="view height" min="0" max="95" value="95" oninput="cssVar('--viewH', this.value + 'vh'); cssVar('--header', 5 * (this.value / 100) + 'vh')">
 				</section>
 				<section>
-					<h2>UI Customization</h2>
+					<h2 style="margin-bottom: 1vh;">UI Customization</h2>
 					<input type="text" name="Logo Text" id="settingsLogoTxt" oninput="document.querySelector('.SlogoTxt').innerHTML = (this.value? this.value : 'osu!');" placeholder="logo text">
 					<input type="color" name="Logo Color" id="settingsLogoColor" value="#e967a1" oninput="updateFavicon(this.value); document.querySelector('.SlogoCont').style.background = this.value;">
 				</section>
@@ -99,7 +102,7 @@
 	<div class="flex cenX cenY fullX" style=" position: fixed; pointer-events: none; top: auto; bottom: 0px; background: transparent url('assets/textures/footer.png') no-repeat center; background-size: cover;">
 		<span style="color: #f8f8f8; font-family: Comfortaa; font-size: calc(var(--fullH) * 0.011);"><b style="font-family: Aller;">osu!online</b> Beta</span>
 	</div>
-<script src="index.js"></script>
 <script src="functs.js"></script>
+<script src="index.js"></script>
 </body>
 </html>

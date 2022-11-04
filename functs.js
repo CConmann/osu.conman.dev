@@ -22,11 +22,13 @@ function updateFavicon(color){
         link.href = canvas.toDataURL("image/x-icon");
 }
 
-function CssVar(name, val, obj){
+function cssVar(name, val, obj){
 	if(val || val == null){
 		document.querySelector((obj ? obj : ':root')).style.setProperty(name, val);
 	}
-	return getComputedStyle((obj ? obj : ':root')).getPropertyValue(name);
+	else{
+		return getComputedStyle((obj ? obj : ':root')).getPropertyValue(name);
+	}
 }
 
 function openSettings(){
@@ -37,8 +39,16 @@ function closeSettings(){
 }
 
 function openHeader(){
-
+	//TODO
 }
 function closeHeader(){
-	
+	//TODO
+}
+
+function changeScene(name){
+	document.querySelectorAll('#gameWindow > div').forEach(el => {
+		el.style.display = 'none';
+	})
+	let element = document.querySelectorAll('.' + name)[0];
+	element.style.display = element.dataset.display;
 }
