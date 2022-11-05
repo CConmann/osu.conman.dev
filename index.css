@@ -89,7 +89,7 @@
 	background-image: var(--i);
 	background-size: calc(var(--fullH) * 0.03148);
 	color: #ffffff;
-	transition: background 0.1s;
+	transition: background-color 0.1s;
 }
 .headButton:hover{
 	background-color: rgba(255, 255, 255, 0.2);
