@@ -1,5 +1,5 @@
 @font-face { font-family: Aller; src: url(assets/fonts/allerbold.ttf); }
-@font-face { font-family: Comfortaa; src: url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap); }
+@font-face { font-family: Comfortaa; src: url(assets/fonts/Comfortaa-Light.ttf); }
 @font-face { font-family: Torus; src: url(assets/fonts/Torus/TorusPro-Regular.ttf); }
 @font-face { font-family: Torus-Bold; src: url(assets/fonts/Torus/TorusPro-Bold.ttf); }
 @font-face { font-family: Torus-Light; src: url(assets/fonts/Torus/TorusPro-Light.ttf); }
@@ -30,6 +30,33 @@
 	overflow: hidden;
 	width: 100%;
 	height: var(--viewH);
+}
+@media screen { /** General */
+.backButton{
+	position: relative;
+	background: #ff66aa;
+	width: calc(var(--viewH) * 0.05463);
+	height: calc(var(--viewH) * 0.064815);
+	border: none;
+}
+.backButton::after{
+	position: absolute;
+	left: 100%;
+	top: 0px;
+	left: calc(100% - var(--viewH) * 0.0037);
+	content: 'Back';
+	background: #ff66aa;
+	border-left: solid #CC5288 calc(var(--viewH) * 0.002);
+	width: calc(var(--viewH) * 0.075);
+	height: calc(var(--viewH) * 0.064815);
+	transform: skewX(-5deg);
+	color: #f3f3f3;
+	font-family: Comfortaa;
+	font-size: calc(var(--viewH) * 0.015);
+	text-shadow: calc() 0px #d4558d;
+	text-align: center;
+	line-height: 450%;
+}
 }
 @media screen { /** header (head) */
 .header{
@@ -250,7 +277,7 @@
 	overflow: hidden;
 	height: calc(var(--viewH) * var(--logoSize));
 	width: calc(var(--viewH) * var(--logoSize));
-	background: #e967a1;
+	background: #ff66aa;
 	border: solid calc(var(--viewH) * (var(--logoSize) * 0.0546)) #ffffff;
 	border-radius: 727vh;
 	z-index: 1;
@@ -274,5 +301,9 @@
 }
 }
 @media screen { /** Song Select (LS) */
-	
+.LS{
+	position: relative;
+	width: var(--viewW);
+	height: var(--viewH);
+}
 }
