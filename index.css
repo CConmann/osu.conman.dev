@@ -35,11 +35,12 @@
 .backButton{
 	position: relative;
 	background: #ff66aa url("assets/textures/arrowLeft.png") no-repeat;
-	background-size: 60%;
+	background-size: calc(var(--viewH) * 0.0333);
 	background-position: 40% 50%;
 	width: calc(var(--viewH) * 0.05463);
 	height: calc(var(--viewH) * 0.064815);
 	border: none;
+	transition: width 0.7s, background 0.7s;
 }
 .backButton::after{
 	position: absolute;
@@ -55,9 +56,19 @@
 	color: #f3f3f3;
 	font-family: Comfortaa;
 	font-size: calc(var(--viewH) * 0.015);
-	text-shadow: calc() 0px #d4558d;
+	text-shadow: 0px calc(var(--viewH) * 0.00185) rgba(0, 0, 0, 0.25);
 	text-align: center;
 	line-height: 450%;
+	transition: width 0.7s;
+}
+.backButton:hover{
+	background-color: #CC5288;
+	width: calc(var(--viewH) * 0.075926);
+	transition: width 0.2s cubic-bezier(.2,1.98,.49,.75);
+}
+.backButton:hover::after{
+	width: calc(var(--viewH) * 0.1074);
+	transition: width 0.2s cubic-bezier(.2,1.98,.49,.75), background-color 0.2s;
 }
 }
 @media screen { /** header (head) */
