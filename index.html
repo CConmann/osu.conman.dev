@@ -14,35 +14,34 @@
 			<div class="header">
 				<div class="headCont">
 					<!-- TODO finish header buttons -->
-					<button class="headButton" style="--i: url(assets/hexacons/settings.png); --h: 'settings'; --d: 'change the way osu! behaves (Ctrl-O)'; width: calc(var(--fullH) * 0.07314);" onclick="openSettings()"></button>
-					<button class="headButton" style="--i: url(assets/hexacons/home.png); --h: 'home'; --d: 'return to the main menu (Alt-Home)'; width: calc(var(--fullH) * 0.07314);" onclick="changeScene('S')"></button>
+					<button class="headButton" style="--i: url(assets/icons/hexacons/settings.png); --h: 'settings'; --d: 'change the way osu! behaves (Ctrl-O)'; width: calc(var(--fullH) * 0.07314);" onclick="openSettings()"></button>
+					<button class="headButton" style="--i: url(assets/icons/hexacons/home.png); --h: 'home'; --d: 'return to the main menu (Alt-Home)'; width: calc(var(--fullH) * 0.07314);" onclick="changeScene('S')"></button>
 					<div class="JStriangles" style="display: flex;">
-						<button class="headButton headGMButton" style="--i: url(assets/hexacons/gamemodes/osu.png); --h:'osu!'; --d: 'play some osu!';"></button>
-						<button class="headButton headGMButton" style="--i: url(assets/hexacons/gamemodes/taiko.png); --h:'osu!taiko'; --d: 'play some osu!taiko';"></button>
-						<button class="headButton headGMButton" style="--i: url(assets/hexacons/gamemodes/catch.png); --h:'osu!catch'; --d: 'play some osu!catch';"></button>
-						<button class="headButton headGMButton" style="--i: url(assets/hexacons/gamemodes/mania.png); --h:'osu!mania'; --d: 'play some osu!mania';"></button>
+						<button class="headButton headGMButton" style="--i: url(assets/icons/gamemodes/osu.png); --h:'osu!'; --d: 'play some osu!';"></button>
+						<button class="headButton headGMButton" style="--i: url(assets/icons/gamemodes/taiko.png); --h:'osu!taiko'; --d: 'play some osu!taiko';"></button>
+						<button class="headButton headGMButton" style="--i: url(assets/icons/gamemodes/catch.png); --h:'osu!catch'; --d: 'play some osu!catch';"></button>
+						<button class="headButton headGMButton" style="--i: url(assets/icons/gamemodes/mania.png); --h:'osu!mania'; --d: 'play some osu!mania';"></button>
 					</div>
 				</div>
 				<div class="headCont" style="justify-content: right;">
-					<button class="headButton r" style="--i: url(assets/hexacons/news.png); --h:'news'; --d: 'get up-to-date on community happenings';"></button>
-					<button class="headButton r" style="--i: url(assets/hexacons/devtools.png); --h:'changelog'; --d: 'track recent dev updates in the osu! ecosystem';"></button>
-					<button class="headButton r" style="--i: url(assets/hexacons/rankings.png); --h:'rankings'; --d: 'find out who`s the best right now';"></button>
-					<button class="headButton r" style="--i: url(assets/hexacons/beatmap.png); --h:'beatmap listing'; --d: 'browse for new beatmaps (Ctrl-D)';"></button>
-					<button class="headButton r" style="--i: url(assets/hexacons/messaging.png); --h:'chat'; --d: 'join the real-time discussion (f8)';"></button>
-					<button class="headButton r" style="--i: url(assets/hexacons/social.png); --h:'dashboard'; --d: 'view your friends and other information (f9)';"></button>
-					<button class="headButton r" style="--i: url(assets/hexacons/wiki.png); --h:'wiki'; --d: 'knowledge base';"></button>
-					<button class="headButton r" style="--i: url(assets/hexacons/music.png); --h:'playback'; --d: 'manage the currently playing track (f6)'; width: calc(var(--fullH) * 0.07685);"></button>
+					<button class="headButton r" style="--i: url(assets/icons/hexacons/news.png); --h:'news'; --d: 'get up-to-date on community happenings';"></button>
+					<button class="headButton r" style="--i: url(assets/icons/hexacons/devtools.png); --h:'changelog'; --d: 'track recent dev updates in the osu! ecosystem';"></button>
+					<button class="headButton r" style="--i: url(assets/icons/hexacons/rankings.png); --h:'rankings'; --d: 'find out who`s the best right now';"></button>
+					<button class="headButton r" style="--i: url(assets/icons/hexacons/beatmap.png); --h:'beatmap listing'; --d: 'browse for new beatmaps (Ctrl-D)';"></button>
+					<button class="headButton r" style="--i: url(assets/icons/hexacons/messaging.png); --h:'chat'; --d: 'join the real-time discussion (f8)';"></button>
+					<button class="headButton r" style="--i: url(assets/icons/hexacons/social.png); --h:'dashboard'; --d: 'view your friends and other information (f9)';"></button>
+					<button class="headButton r" style="--i: url(assets/icons/hexacons/wiki.png); --h:'wiki'; --d: 'knowledge base';"></button>
+					<button class="headButton r" style="--i: url(assets/icons/hexacons/music.png); --h:'playback'; --d: 'manage the currently playing track (f6)'; width: calc(var(--fullH) * 0.07685);"></button>
 					<button class="headButton r JStriangles" style="width: calc(var(--fullH) * 0.17685);">Profile</button>
 					<button class="headButton r" style="width: calc(var(--fullH) * 0.1472);">Clock</button>
-					<button class="headButton r" style="--i: url(assets/hexacons/notification.png); --h: 'notifications'; --d: 'waiting for `ya (Ctrl-N)'"></button>
+					<button class="headButton r" style="--i: url(assets/icons/hexacons/notification.png); --h: 'notifications'; --d: 'waiting for `ya (Ctrl-N)'"></button>
 				</div>
 			</div>
 			<div id="gameWindow" class="gameWindow">
 				<div class="S" style="display: flex;" data-display="flex">
 					<div class="SflexCont">
 						<div class="SbuttonCont" style="width: calc(var(--viewH) * 0.314); justify-content: right; left: calc(var(--viewH) * 0.026);">
-							<!-- TODO refur to the 2nt .SbuttonCont -->
-							<button class="Sbutton" style="--c:#555555;" onclick="openSettings()">Settings</button>
+							<button class="Sbutton" style="--setngs: -0.002;--c:#555555;" onclick="openSettings()"><img style="left: calc(var(--viewH) * -0.013);" src="assets/icons/other/settings.png" alt="settings"><span>settings</span></button>
 						</div>
 						<div class="SlogoCont" onclick="changeScene('LS')">
 							<!-- TODO animated triangles bg -->
@@ -50,12 +49,10 @@
 							<span class="SlogoTxt">osu!</span>
 						</div>
 						<div class="SbuttonCont" style="left: calc(var(--viewH) * -0.026);">
-							<!-- TODO little bouncing icons :) -->
-							<!-- TODO shadows too -->
-							<button class="Sbutton" style="--c:#6546c0;" onclick="changeScene('LS')">Play</button>
-							<button class="Sbutton" style="--c:#eeaa00;">Edit</button>
-							<button class="Sbutton" style="--c:#a5cc00;">Browse</button>
-							<button class="Sbutton" style="--c:#ee3399;" onclick="window.location.href = 'https://conman.dev';">Exit</button>
+							<button class="Sbutton" style="--z: 4; --c:#6546c0;" onclick="changeScene('LS')"><img src="assets/icons/other/play.png" alt="play"><span>play</span></button>
+							<button class="Sbutton" style="--z: 3; --c:#eeaa00;"><img src="assets/icons/other/edit.png" alt="edit"><span>edit</span></button>
+							<button class="Sbutton" style="--z: 2; --c:#a5cc00;"><img src="assets/icons/other/browse.png" alt="browse"><span>browse</span></button>
+							<button class="Sbutton" style="--z: 1; --c:#ee3399;" onclick="let a = document.querySelectorAll('body')[0]; a.style.transition = 'filter 2s'; a.style.filter = 'brightness(0%)'; setTimeout(function(){ window.location.href = 'https://conman.dev'; }, 2000)"><img src="assets/icons/other/exit.png" alt="exit"><span>exit</span></button>
 						</div>
 					</div>
 					<div class="flex cenX cenY fullX" style=" position: fixed; pointer-events: none; top: auto; bottom: 0px; background: transparent url('assets/textures/footer.png') no-repeat center; background-size: cover;">

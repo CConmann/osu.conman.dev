@@ -258,6 +258,10 @@
 	transition: opacity 1s;
 }
 .Sbutton{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 100%;
 	width: calc(var(--viewH) * 0.2);
 	transform: skewX(-11.5deg);
@@ -265,10 +269,30 @@
 	border: none;
 	animation: SbuttonBounce-back 0.27s backwards;
 	cursor: pointer;
+	z-index: var(--z, 1);
+	box-shadow: calc(var(--viewH) * var(--setngs, 0.002)) 0px calc(var(--viewH) * 0.005) rgba(0, 0, 0, 0.2);
 }
 .Sbutton:hover{
 	width: calc(var(--viewH) * 0.3);
 	animation: SbuttonBounce 0.27s;
+}
+.Sbutton span{
+	position: absolute;
+	width: 100%;
+	top: auto;
+	bottom: calc(var(--viewH) * 0.007);
+	color: #ffffff;
+	text-align: center;
+	font-size: calc(var(--viewH) * 0.016);
+	transform: skewX(11.5deg);
+	font-family: Comfortaa;
+}
+.Sbutton img{
+	position: relative;
+	left: calc(var(--viewH) * -0.01);
+	height: 30%;
+	width: auto;
+	transform: skewX(11.5deg);
 }
 @keyframes SbuttonBounce {
 	0%   { width: calc(var(--viewH) * 0.2); }
