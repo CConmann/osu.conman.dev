@@ -166,7 +166,7 @@
 	flex-direction: column;
 	width: 100%;
 }
-.conmann div{
+.socials div{
 	position: absolute;
 	display: flex;
 	flex-direction: column;
@@ -178,12 +178,12 @@
 	top: calc(var(--fullH) * 0.018);
 	border-top: solid transparent 0px;
 }
-.conmann:hover > div{
+.socials:hover > div{
 	border-top: solid #29272f 3px;
 	height: calc(var(--fullH) * 0.07);
 	transition: height 1s cubic-bezier(0.075, 0.82, 0.165, 1), border 1s;
 }
-.conmann div a{
+.socials div a{
 	color: #f3f3f3;
 	font-family: Torus-Light;
 	font-size: calc(var(--fullH) * 0.018);
