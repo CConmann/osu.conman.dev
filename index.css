@@ -34,7 +34,9 @@
 @media screen { /** General */
 .backButton{
 	position: relative;
-	background: #ff66aa;
+	background: #ff66aa url("assets/textures/arrowLeft.png") no-repeat;
+	background-size: 60%;
+	background-position: 40% 50%;
 	width: calc(var(--viewH) * 0.05463);
 	height: calc(var(--viewH) * 0.064815);
 	border: none;
@@ -44,12 +46,12 @@
 	left: 100%;
 	top: 0px;
 	left: calc(100% - var(--viewH) * 0.0037);
-	content: 'Back';
+	content: 'back';
 	background: #ff66aa;
 	border-left: solid #CC5288 calc(var(--viewH) * 0.002);
 	width: calc(var(--viewH) * 0.075);
 	height: calc(var(--viewH) * 0.064815);
-	transform: skewX(-5deg);
+	transform: skewX(-6deg);
 	color: #f3f3f3;
 	font-family: Comfortaa;
 	font-size: calc(var(--viewH) * 0.015);
