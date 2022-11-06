@@ -1,10 +1,38 @@
 //* Stores functions used often / used for buttons
 
 function SlogoFull(){
-	document.querySelectorAll('.SbuttonCont').forEach(function(el){
-		el.style.opacity = '0';
-	});
 	document.querySelector('.SflexCont').style.background = 'none'
+	let logoSize = 0.2713,
+	logoSizeLoop = setInterval(function(){
+		logoSize += 0.1;
+		if(logoSize > 0.6){
+			clearInterval(logoSizeLoop);
+			cssVar('--logoSize', 0.6, '.SlogoCont');
+			return;
+		}
+		cssVar('--logoSize', logoSize, '.SlogoCont');
+	}, 20);
+	document.querySelectorAll('.SbuttonCont').forEach(function(el){
+		el.style.width = '0px';
+		el.style.opacity = '0';	
+	});
+}
+function SlogoMini(){
+	document.querySelector('.SflexCont').style.background = '#323232'
+	let logoSize = 0.6,
+	logoSizeLoop = setInterval(function(){
+		logoSize -= 0.1;
+		if(logoSize < 0.2713){
+			clearInterval(logoSizeLoop);
+			cssVar('--logoSize', 0.2713, '.SlogoCont');
+			return;
+		}
+		cssVar('--logoSize', logoSize, '.SlogoCont');
+	}, 20);
+	document.querySelectorAll('.SbuttonCont').forEach(function(el){
+		el.style.width = 'var(--w)';
+		el.style.opacity = '1';	
+	});
 }
 
 function updateFavicon(color){

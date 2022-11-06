@@ -251,15 +251,15 @@
 	width: 100%;
 	height: calc(var(--viewH) * 0.1315);
 	background: #323232;
-	
+	transition: background 0.6s;
 }
 .SbuttonCont{
 	position: relative;
 	display: flex;
 	height: 100%;
-	width: calc(var(--viewH) * 0.929);
+	width: var(--w);
 	z-index: 0;
-	transition: opacity 1s;
+	transition: opacity 0.6s, width 0.6s;
 }
 .Sbutton{
 	position: relative;
