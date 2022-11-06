@@ -32,10 +32,38 @@ function cssVar(name, val, obj){
 }
 
 function openSettings(){
-	document.querySelector('#settingsCont').style.display = 'flex';
+	let cont = document.querySelector('#settingsCont'),
+	sidebar = document.querySelectorAll('.settingsSidebar')[0],
+	main = document.querySelectorAll('.settings')[0];
+	cont.style.display = 'flex';
+	cont.animate({
+		opacity: ['0', '1'],
+	}, { duration: 400, fill: 'forwards' });
+	sidebar.animate({
+		left: ['-9.074vh', '0'],
+		easing: ['cubic-bezier(.1,0,0,1)']
+	}, { duration: 350, fill: 'forwards' });
+	main.animate({
+		left: ['-52.1296vh', '0'],
+		easing: ['cubic-bezier(.1,0,0,1)']
+	}, { duration: 500, fill: 'forwards' });
 }
 function closeSettings(){
-	document.querySelector('#settingsCont').style.display = 'none';
+	let cont = document.querySelector('#settingsCont'),
+	sidebar = document.querySelectorAll('.settingsSidebar')[0],
+	main = document.querySelectorAll('.settings')[0];
+	cont.animate({
+		opacity: ['1', '0']
+	}, { duration: 300, fill: 'forwards' });
+	sidebar.animate({
+		left: ['0', '-9.074vh'],
+		easing: ['cubic-bezier(.1,0,0,1)']
+	}, { duration: 300, fill: 'forwards' });
+	main.animate({
+		left: ['0', '-52.1296vh'],
+		easing: ['cubic-bezier(.1,0,0,1)']
+	}, { duration: 300, fill: 'forwards' });
+	setTimeout(function(){ cont.style.display = 'none'; }, 350)
 }
 
 function openHeader(){

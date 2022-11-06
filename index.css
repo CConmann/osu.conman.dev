@@ -136,6 +136,7 @@
 .settingsCont{
 	--accent-color: #8c66ff;
 	--hover-color: #a076ee;
+	position: relative;
 	pointer-events: all;
 	display: flex;
 	width: 100vw;
@@ -143,17 +144,20 @@
 	color: whitesmoke;
 }
 .settingsClose{
+	position: absolute;
 	height: 100%;
 	width: 100%;
 	background: rgba(0, 0, 0, 0.5);
 }
 .settingsSidebar{
+	position: relative;
 	display: flex;
 	height: 100%;
 	width: 9.074vh;
 	background: #29272f;
 }
 .settings{
+	position: relative;
 	display: block;
 	width: 52.1296vh;
 	background: #34323b;
