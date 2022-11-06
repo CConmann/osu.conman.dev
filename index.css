@@ -272,6 +272,7 @@
 	background: var(--c);
 	border: none;
 	animation: SbuttonBounce-back 0.27s backwards;
+	transition: filter 0.3s;
 	cursor: pointer;
 	z-index: var(--z, 1);
 	box-shadow: calc(var(--viewH) * var(--setngs, 0.002)) 0px calc(var(--viewH) * 0.005) rgba(0, 0, 0, 0.2);
@@ -279,6 +280,10 @@
 .Sbutton:hover{
 	width: calc(var(--viewH) * 0.3);
 	animation: SbuttonBounce 0.27s;
+}
+.Sbutton:active{
+	filter: brightness(1.4);
+	transition: filter 0s;
 }
 .Sbutton span{
 	position: absolute;
