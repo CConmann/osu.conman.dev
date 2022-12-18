@@ -13,7 +13,7 @@
 		<div class="fullCont">
 			<div class="header">
 				<div class="headCont">
-					<button class="headButton" style="--i: url(assets/icons/hexacons/settings.png); --h: 'settings'; --d: 'change the way osu! behaves (Ctrl-O)'; width: calc(var(--fullH) * 0.07314);" onclick="openSettings()"></button>
+					<button class="headButton" style="--i: url(assets/icons/hexacons/settings.png); --h: 'settings'; --d: 'change the way osu! behaves (ALT-O)'; width: calc(var(--fullH) * 0.07314);" onclick="openSettings()"></button>
 					<button class="headButton" style="--i: url(assets/icons/hexacons/home.png); --h: 'home'; --d: 'return to the main menu (Alt-Home)'; width: calc(var(--fullH) * 0.07314);" onclick="changeScene('S')"></button>
 					<div class="JStriangles" style="display: flex;">
 						<button class="headButton headGMButton" style="--i: url(assets/icons/gamemodes/osu.png); --h:'osu!'; --d: 'play some osu!';"></button>
@@ -26,14 +26,14 @@
 					<button class="headButton r" style="--i: url(assets/icons/hexacons/news.png); --h:'news'; --d: 'get up-to-date on community happenings';"></button>
 					<button class="headButton r" style="--i: url(assets/icons/hexacons/devtools.png); --h:'changelog'; --d: 'track recent dev updates in the osu! ecosystem';"></button>
 					<button class="headButton r" style="--i: url(assets/icons/hexacons/rankings.png); --h:'rankings'; --d: 'find out who`s the best right now';"></button>
-					<button class="headButton r" style="--i: url(assets/icons/hexacons/beatmap.png); --h:'beatmap listing'; --d: 'browse for new beatmaps (Ctrl-D)';"></button>
+					<button class="headButton r" style="--i: url(assets/icons/hexacons/beatmap.png); --h:'beatmap listing'; --d: 'browse for new beatmaps (ALT-D)';"></button>
 					<button class="headButton r" style="--i: url(assets/icons/hexacons/messaging.png); --h:'chat'; --d: 'join the real-time discussion (f8)';"></button>
 					<button class="headButton r" style="--i: url(assets/icons/hexacons/social.png); --h:'dashboard'; --d: 'view your friends and other information (f9)';"></button>
 					<button class="headButton r" style="--i: url(assets/icons/hexacons/wiki.png); --h:'wiki'; --d: 'knowledge base';"></button>
 					<button class="headButton r" style="--i: url(assets/icons/hexacons/music.png); --h:'playback'; --d: 'manage the currently playing track (f6)'; width: calc(var(--fullH) * 0.07685);"></button>
 					<button class="headButton r JStriangles" style="width: calc(var(--fullH) * 0.17685);">Profile</button>
 					<button class="headButton r" style="width: calc(var(--fullH) * 0.1472);">Clock</button>
-					<button class="headButton r" style="--i: url(assets/icons/hexacons/notification.png); --h: 'notifications'; --d: 'waiting for `ya (Ctrl-N)'"></button>
+					<button class="headButton r" style="--i: url(assets/icons/hexacons/notification.png); --h: 'notifications'; --d: 'waiting for `ya (ALT-N)'"></button>
 				</div>
 			</div>
 			<div id="gameWindow" class="gameWindow">
@@ -73,6 +73,8 @@
 				settings
 			</div>
 			<div class="settings">
+				<h2>Please Note</h2>
+				<span>All <span class="code" title="MacOS ⌘-_">CTRL-_</span> shortcuts have been altered to <span class="code" title="MacOS ⌥-_">ALT-_</span></span>
 				<section>
 					<h2>Display</h2>
 					<span>View Width</span>
