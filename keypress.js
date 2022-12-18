@@ -7,5 +7,16 @@ if(e.key == 't' && e.altKey == true){
 		openHeader();
 	}
 }
+if(e.key == 'o' && e.altKey == true){
+	if(document.querySelector('#settingsCont').style.display == 'flex'){
+		closeSettings();
+	}else{
+		openSettings();
+	}
+}
+if(e.key == 'Home'){
+	changeScene('S');
+}
 
+console.log(e.key);
 }, false);
