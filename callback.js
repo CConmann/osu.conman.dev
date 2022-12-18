@@ -14,7 +14,7 @@ function SlogoFull(){
 	}, 20);
 	document.querySelectorAll('.SbuttonCont').forEach(function(el){
 		el.style.width = '0px';
-		el.style.opacity = '0';	
+		el.style.opacity = '0';
 	});
 }
 function SlogoMini(){
@@ -95,13 +95,33 @@ function closeSettings(){
 }
 
 function openHeader(){
-	//TODO
+	document.querySelector('.header').style.height = '5vh';
+	let i = 0;
+	let loop = setInterval(() => {
+		i += 0.1;
+		if(i > 5){
+			i = 5;
+			clearInterval(loop)
+		}
+		cssVar('--header', i+'vh', null)
+	}, 10);
 }
 function closeHeader(){
-	//TODO
+	document.querySelector('.header').style.height = '0vh';
+	
+	let i = 5;
+	let loop = setInterval(() => {
+		i -= 0.1;
+		if(i < 0){
+			i = 0;
+			clearInterval(loop)
+		}
+		cssVar('--header', i+'vh', null)
+	}, 10);
 }
 
 function changeScene(name){
+	//!rework
 	document.querySelectorAll('#gameWindow > div').forEach(el => {
 		el.style.display = 'none';
 	})
