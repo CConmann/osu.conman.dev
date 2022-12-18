@@ -199,9 +199,9 @@
 }
 .settings h2{
 	font-family: Torus;
-	font-size: cac(var(--fullH) * 0.06);
-	margin-top: cac(var(--fullH) * 0.05);
-	margin-left: cac(var(--fullH) * 0.05);
+	font-size: calc(var(--fullH) * 0.03);
+	margin-top: calc(var(--fullH) * 0.01);
+	margin-left: calc(var(--fullH) * 0.01);
 }
 .settings section{
 	border-top: solid #18171c 0.555vh;
